@@ -127,7 +127,7 @@ module {
         };
 
         public let balances = HashMap.fromIter<Principal, Nat>(
-            _balances.vals(), 1, Principal.equal, Principal.hash,
+            _balances.vals(), _balances.size(), Principal.equal, Principal.hash,
         );
 
         public func chargeFee(from : Principal) {
@@ -151,7 +151,7 @@ module {
                 let a = _allowances.vals();
                 public func next() : ?(Principal, HashMap.HashMap<Principal, Nat>) {
                     switch (a.next()) {
-                        case (? (p, a)) {
+                        case (?(p, a)) {
                             ?(p, HashMap.fromIter<Principal, Nat>(
                                 a.vals(), 1, Principal.equal, Principal.hash,
                             ));
@@ -159,7 +159,7 @@ module {
                         case (_) { null };
                     };
                 };
-            }, 1, Principal.equal, Principal.hash,
+            }, _allowances.size(), Principal.equal, Principal.hash,
         );
 
         public func allowance(owner : Principal, spender : Principal) : Nat {
