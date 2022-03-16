@@ -1,0 +1,10 @@
+{
+    "canisters": {
+        "token": {
+            "main": "src/main.mo",
+            "type": "motoko"
+        }
+    },
+    "dfx": "0.9.2",
+    "version": 1
+}
