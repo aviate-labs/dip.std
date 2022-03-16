@@ -17,7 +17,7 @@ module Generic {
         #Int8Content   : Int8;
         #Int16Content  : Int16;
         #BlobContent   : Blob;
-        #NestedContent : [Value];
+        #NestedContent : Property;
         #Principal     : Principal;
         #TextContent   : Text;
     };
