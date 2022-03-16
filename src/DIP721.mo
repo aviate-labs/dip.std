@@ -3,6 +3,7 @@ import Generic "Generic";
 // NOTE: v2
 module {
     type SupportedInterface = {
+        #Transfer;
         #Burn;
         #Mint;
         #Approval;
